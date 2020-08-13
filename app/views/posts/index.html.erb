@@ -1,0 +1,32 @@
+
+
+<h1>Listing all articles</h1>
+
+
+<p>
+
+<%= link_to "create new post" , new_post_path %>
+</p>
+<table>
+<tr>
+<th>Title</th>
+<th>Content</th>
+
+
+</tr>
+
+<% @posts.each do |post| %>
+    <tr> <td><%= post.title %></td>
+    <td><%= post.content %> </td>
+    <td>
+    <%= link_to "Edit" , edit_post_path(post) %> </td>
+
+   <td> <%= link_to "Show" , :action => :show, :id => post.id %> </td>
+  
+   <td> <%= link_to "Delete" , post_path(post) , method: :delete , data: {confirm: "Are you sure?"}  %> </td>
+  <tr>
+  <% end %>
+
+</table>
+
+

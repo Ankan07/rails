@@ -1,0 +1,13 @@
+
+
+
+<h1> Showing selected artcile </h1>
+
+
+<p> Title: <%= @post.title %> </p>
+
+<p> Content: <%= @post.content %> </p>
+
+<%= link_to "Edit" , edit_post_path(@post) %> </td>
+
+<%= link_to "Back to all Posts" , :action => :index %> 
